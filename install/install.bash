@@ -1,7 +1,7 @@
 
 
 if [[ ${PWD} != */echoware ]]; then
-	echo -e "\033[1;31m[ERROR]\033[1;30m Installed called from wrong directory: ${PWD}"
+	echo -e "\033[1;31m[ERROR]\033[1;30m Installer called from wrong directory: ${PWD}"
 	return
 fi
 
@@ -17,5 +17,3 @@ source env/bin/activate
 pip install --upgrade pip
 
 pip install -r install/requirements.txt
-
-# ipython kernel install --user --name=env
