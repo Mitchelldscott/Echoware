@@ -21,6 +21,28 @@ def rotateZ(point, theta):
 				  [ 0,             0,             1]])
 	return R @ point
 
+def manipulator_ee(alpha):
+
+	end_effector = np.zeros(3)
+
+	# alpha.reverse() # start from the ee
+
+	total_angle = 0
+	for a in alpha:
+		total_angle -= a
+		end_effector += rotateY([1,0,0], total_angle)
+
+	return np.array([end_effector])
+
+def manipulator_pose(alpha):
+
+	joints = np.zeros((len(alpha)+1,3))
+
+	for i in range(1,len(alpha)+1):
+		joints[i] = manipulator_ee(alpha[:i])
+
+	return joints
+
 def starfish_ee(alpha):
 	n_legs = STARFISH_LEGS
 	
