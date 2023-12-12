@@ -55,7 +55,7 @@ class Pose:
 		        
 		    norm_min = np.min([norm_min, norm])
 
-		self.key_points *= 1/(norm_min)
+		self.key_points *= 3/(2*norm_min)
 
 	def end_effectors_world(self):
 		return self.key_points[self.end_effectors]
