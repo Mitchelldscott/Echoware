@@ -1,8 +1,12 @@
 # Echoware
 Pose Retargeting for Robotics
 
-Currently everything is in the init_writeup python notebook. (Everything = insufficient description of the goal)
+install:
 
-Will eventually provide python3 env setup and install scripts as well as viz and benchmarks in the notebook.
+    source install/install.bash
 
-(pose.py will disappear or be restructured)
+run camera script:
+
+    cd hand_tracking
+    python3 demo.py
+    
